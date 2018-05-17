@@ -8,7 +8,13 @@
 
 import UIKit
 
+protocol SignUpCellDelegate : class {
+    func didPressCreateAccount()
+}
+
 class SignUpCell: UITableViewCell {
+    
+    weak var delegate : SignUpCellDelegate?
 
     override func awakeFromNib() {
         super.awakeFromNib()
@@ -20,5 +26,8 @@ class SignUpCell: UITableViewCell {
 
         // Configure the view for the selected state
     }
-
+    @IBAction func createAccount(_ sender: Any) {
+        self.delegate?.didPressCreateAccount()
+    }
+    
 }

@@ -1,0 +1,6 @@
+framework module Pods_Podstel {
+  umbrella header "Pods-Podstel-umbrella.h"
+
+  export *
+  module * { export * }
+}
