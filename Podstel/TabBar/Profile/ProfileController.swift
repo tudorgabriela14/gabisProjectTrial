@@ -11,7 +11,7 @@ import Parse
 
 class ProfileController: AppBaseViewController {
     @IBOutlet weak var tableView: UITableView!
-    let storyboard : UIStoryboard = UIStoryboard(name: "Main", bundle:nil)
+//    let storyboard : UIStoryboard = UIStoryboard(name: "Main", bundle:nil)
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -49,10 +49,10 @@ extension ProfileController : UITableViewDelegate, UITableViewDataSource {
                    self.simpleAlert(title: "Attention".localized(), message: "An error has occured while trying to log out. Please try again")
                     return
                 }
-                let initialViewController = storyboard.instantiateViewController(withIdentifier: "LoginController")
-                
-                self.window?.rootViewController = initialViewController
-                self.window?.makeKeyAndVisible()
+//                let initialViewController = storyboard.instantiateViewController(withIdentifier: "LoginController")
+//
+//                self.window?.rootViewController = initialViewController
+//                self.window?.makeKeyAndVisible()
             })
         }
     }
