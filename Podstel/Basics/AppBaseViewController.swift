@@ -22,14 +22,31 @@ class AppBaseViewController: UIViewController {
     }
     
 
-    /*
-    // MARK: - Navigation
-
-    // In a storyboard-based application, you will often want to do a little preparation before navigation
-    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-        // Get the new view controller using segue.destinationViewController.
-        // Pass the selected object to the new view controller.
+    func simpleAlert(title:String?,message:String?) {
+        guard title != nil || message != nil else {
+            return
+        }
+        let vc = UIAlertController(title: title, message: message, preferredStyle: .alert)
+        vc.addAction(UIAlertAction(title: "OK", style: .cancel, handler: nil))
+        present(vc, animated: true, completion: nil)
     }
-    */
+    
+    func simpleAlert(title:String?,message:String?, handler: (() -> Swift.Void)? = nil) {
+        guard title != nil || message != nil else {
+            return
+        }
+        let vc = UIAlertController(title: title, message: message, preferredStyle: .alert)
+        vc.addAction(UIAlertAction(title: "OK", style: .cancel, handler: nil))
+        present(vc, animated: true, completion: handler)
+    }
+    
+    func simpleAlert(title:String?,message:String?, handler: ((UIAlertAction) -> Swift.Void)? = nil) {
+        guard title != nil || message != nil else {
+            return
+        }
+        let vc = UIAlertController(title: title, message: message, preferredStyle: .alert)
+        vc.addAction(UIAlertAction(title: "OK", style: .cancel, handler: handler))
+        present(vc, animated: true, completion: nil)
+    }
 
 }

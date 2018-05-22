@@ -7,11 +7,14 @@
 //
 
 import UIKit
+import Parse
 
-class LoginController: UIViewController {
+class LoginController: AppBaseViewController {
     @IBOutlet weak var tableView: UITableView!
     @IBOutlet weak var emailTextField: UITextField!
     @IBOutlet weak var passwordTextField: UITextField!
+    
+     let storyBoard : UIStoryboard = UIStoryboard(name: "Main", bundle:nil)
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -25,7 +28,33 @@ class LoginController: UIViewController {
     }
 
     @IBAction func connect(_ sender: Any) {
-        print("login")
+        if(self.validateFields()) {
+            PFUser.logInWithUsername(inBackground: self.emailTextField.text!, password: self.passwordTextField.text!, block: { (user, error) in
+                if(user != nil) {
+//                    self.simpleAlert(title: "Success".localized(), message: "Logged in".localized())
+                    
+                    let tabBarVC = self.storyBoard.instantiateViewController(withIdentifier: "TabBarController") as! TabBarController
+                    self.present(tabBarVC, animated: true, completion: nil)
+                }
+                else {
+                    self.simpleAlert(title: "Attention".localized(), message: "\(error ?? "Login couldn't be finished. Please try again." as! Error)")
+                }
+            })
+        }
+    }
+    
+    func validateFields() -> Bool{
+        if(!emailTextField.isValidEmail) {
+            self.simpleAlert(title: "Attention".localized(), message: "Please make sure your email address is valid, then try again. Thank you!".localized())
+            return false;
+        }
+        else {
+            if((passwordTextField.text?.length)! < 5) {
+                self.simpleAlert(title: "Attention".localized(), message: "Please make sure your password has the right format. Thank you!".localized())
+                return false;
+            }
+        }
+        return true;
     }
 }
 
@@ -53,6 +82,4 @@ extension LoginController : SignUpCellDelegate {
     func didPressCreateAccount() {
         print("create account")
     }
-    
-
 }

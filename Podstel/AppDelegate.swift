@@ -25,6 +25,7 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         }
         Parse.initialize(with: configuration)
         saveInstallationObject()
+        self.checkIfUserIsAlreadyConnected()
         return true
     }
 
@@ -64,6 +65,25 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
                     }
                 }
             }
+        }
+    }
+    
+
+    
+    func checkIfUserIsAlreadyConnected()  {
+        self.window = UIWindow(frame: UIScreen.main.bounds)
+        let storyboard = UIStoryboard(name: "Main", bundle: nil)
+        if(PFUser.current() != nil) {
+            let initialViewController = storyboard.instantiateViewController(withIdentifier: "LoginController")
+            
+            self.window?.rootViewController = initialViewController
+            self.window?.makeKeyAndVisible()
+        }
+        else {
+            let initialViewController = storyboard.instantiateViewController(withIdentifier: "TabBarController")
+            
+            self.window?.rootViewController = initialViewController
+            self.window?.makeKeyAndVisible()
         }
     }
 
