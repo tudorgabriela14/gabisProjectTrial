@@ -18,6 +18,20 @@
 		C0DFBBEA20ADBB730075DCA4 /* LoginController.swift in Sources */ = {isa = PBXBuildFile; fileRef = C0DFBBE920ADBB730075DCA4 /* LoginController.swift */; };
 		C0DFBBED20ADBD900075DCA4 /* SignUpCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = C0DFBBEC20ADBD900075DCA4 /* SignUpCell.swift */; };
 		C0DFBBF020ADBDFF0075DCA4 /* AppBaseViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = C0DFBBEF20ADBDFF0075DCA4 /* AppBaseViewController.swift */; };
+		C0F1813E20B5B9FE004961CB /* ArticleCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = C0F1813C20B5B9FE004961CB /* ArticleCell.swift */; };
+		C0F1813F20B5B9FE004961CB /* ArticlesController.swift in Sources */ = {isa = PBXBuildFile; fileRef = C0F1813D20B5B9FE004961CB /* ArticlesController.swift */; };
+		C0F1814220B5BACC004961CB /* Article.swift in Sources */ = {isa = PBXBuildFile; fileRef = C0F1814120B5BACC004961CB /* Article.swift */; };
+		C0F1814420B5BADC004961CB /* Event.swift in Sources */ = {isa = PBXBuildFile; fileRef = C0F1814320B5BADC004961CB /* Event.swift */; };
+		C0F1814620B5BAE9004961CB /* User.swift in Sources */ = {isa = PBXBuildFile; fileRef = C0F1814520B5BAE9004961CB /* User.swift */; };
+		C0F1814820B5BB23004961CB /* Bed.swift in Sources */ = {isa = PBXBuildFile; fileRef = C0F1814720B5BB23004961CB /* Bed.swift */; };
+		C0F1814A20B5BB61004961CB /* Room.swift in Sources */ = {isa = PBXBuildFile; fileRef = C0F1814920B5BB61004961CB /* Room.swift */; };
+		C0F1814C20B5C00C004961CB /* ParseManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = C0F1814B20B5C00C004961CB /* ParseManager.swift */; };
+		C0F1814E20B5CCC4004961CB /* ArticleDetailsController.swift in Sources */ = {isa = PBXBuildFile; fileRef = C0F1814D20B5CCC4004961CB /* ArticleDetailsController.swift */; };
+		C0F1815020B5D3CE004961CB /* EventsController.swift in Sources */ = {isa = PBXBuildFile; fileRef = C0F1814F20B5D3CE004961CB /* EventsController.swift */; };
+		C0F1815220B5D69E004961CB /* EventDetailsController.swift in Sources */ = {isa = PBXBuildFile; fileRef = C0F1815120B5D69E004961CB /* EventDetailsController.swift */; };
+		C0F1815420B5D6F0004961CB /* CoverImageCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = C0F1815320B5D6F0004961CB /* CoverImageCell.swift */; };
+		C0F1815620B5D715004961CB /* ExtraActionCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = C0F1815520B5D715004961CB /* ExtraActionCell.swift */; };
+		C0F1815820B5D72B004961CB /* DoubleActionsCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = C0F1815720B5D72B004961CB /* DoubleActionsCell.swift */; };
 		E58A03478FD93028AAD279BC /* Pods_Podstel.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 6761458C05BB9A2483784F24 /* Pods_Podstel.framework */; };
 /* End PBXBuildFile section */
 
@@ -38,6 +52,20 @@
 		C0DFBBE920ADBB730075DCA4 /* LoginController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginController.swift; sourceTree = "<group>"; };
 		C0DFBBEC20ADBD900075DCA4 /* SignUpCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SignUpCell.swift; sourceTree = "<group>"; };
 		C0DFBBEF20ADBDFF0075DCA4 /* AppBaseViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppBaseViewController.swift; sourceTree = "<group>"; };
+		C0F1813C20B5B9FE004961CB /* ArticleCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = ArticleCell.swift; path = Podstel/TabBar/ArticleCell.swift; sourceTree = SOURCE_ROOT; };
+		C0F1813D20B5B9FE004961CB /* ArticlesController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = ArticlesController.swift; path = Podstel/TabBar/ArticlesController.swift; sourceTree = SOURCE_ROOT; };
+		C0F1814120B5BACC004961CB /* Article.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Article.swift; sourceTree = "<group>"; };
+		C0F1814320B5BADC004961CB /* Event.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Event.swift; sourceTree = "<group>"; };
+		C0F1814520B5BAE9004961CB /* User.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = User.swift; sourceTree = "<group>"; };
+		C0F1814720B5BB23004961CB /* Bed.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Bed.swift; sourceTree = "<group>"; };
+		C0F1814920B5BB61004961CB /* Room.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Room.swift; sourceTree = "<group>"; };
+		C0F1814B20B5C00C004961CB /* ParseManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ParseManager.swift; sourceTree = "<group>"; };
+		C0F1814D20B5CCC4004961CB /* ArticleDetailsController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ArticleDetailsController.swift; sourceTree = "<group>"; };
+		C0F1814F20B5D3CE004961CB /* EventsController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EventsController.swift; sourceTree = "<group>"; };
+		C0F1815120B5D69E004961CB /* EventDetailsController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EventDetailsController.swift; sourceTree = "<group>"; };
+		C0F1815320B5D6F0004961CB /* CoverImageCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CoverImageCell.swift; sourceTree = "<group>"; };
+		C0F1815520B5D715004961CB /* ExtraActionCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ExtraActionCell.swift; sourceTree = "<group>"; };
+		C0F1815720B5D72B004961CB /* DoubleActionsCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DoubleActionsCell.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -90,11 +118,13 @@
 		C040D7C420A323C100CFE536 /* Podstel */ = {
 			isa = PBXGroup;
 			children = (
+				C040D7C520A323C100CFE536 /* AppDelegate.swift */,
+				C0F1814B20B5C00C004961CB /* ParseManager.swift */,
+				C0F1814020B5BAB4004961CB /* Models */,
 				C071454020B3E5580000B322 /* TabBar */,
 				C071453D20B3DF820000B322 /* Helpers */,
 				C0DFBBEE20ADBDE00075DCA4 /* Basics */,
 				C0DFBBE820ADBAE60075DCA4 /* Login */,
-				C040D7C520A323C100CFE536 /* AppDelegate.swift */,
 				C040D7C720A323C100CFE536 /* ViewController.swift */,
 				C040D7C920A323C100CFE536 /* Main.storyboard */,
 				C040D7CC20A323C100CFE536 /* Assets.xcassets */,
@@ -135,6 +165,9 @@
 		C071454420B3F10A0000B322 /* Articles */ = {
 			isa = PBXGroup;
 			children = (
+				C0F1813C20B5B9FE004961CB /* ArticleCell.swift */,
+				C0F1813D20B5B9FE004961CB /* ArticlesController.swift */,
+				C0F1814D20B5CCC4004961CB /* ArticleDetailsController.swift */,
 			);
 			path = Articles;
 			sourceTree = "<group>";
@@ -142,6 +175,11 @@
 		C071454520B3F11A0000B322 /* Events */ = {
 			isa = PBXGroup;
 			children = (
+				C0F1814F20B5D3CE004961CB /* EventsController.swift */,
+				C0F1815120B5D69E004961CB /* EventDetailsController.swift */,
+				C0F1815320B5D6F0004961CB /* CoverImageCell.swift */,
+				C0F1815520B5D715004961CB /* ExtraActionCell.swift */,
+				C0F1815720B5D72B004961CB /* DoubleActionsCell.swift */,
 			);
 			path = Events;
 			sourceTree = "<group>";
@@ -176,6 +214,19 @@
 				C0DFBBEF20ADBDFF0075DCA4 /* AppBaseViewController.swift */,
 			);
 			path = Basics;
+			sourceTree = "<group>";
+		};
+		C0F1814020B5BAB4004961CB /* Models */ = {
+			isa = PBXGroup;
+			children = (
+				C0F1814120B5BACC004961CB /* Article.swift */,
+				C0F1814320B5BADC004961CB /* Event.swift */,
+				C0F1814520B5BAE9004961CB /* User.swift */,
+				C0F1814720B5BB23004961CB /* Bed.swift */,
+				C0F1814920B5BB61004961CB /* Room.swift */,
+			);
+			name = Models;
+			path = "New Group";
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -292,12 +343,16 @@
 				"${BUILT_PRODUCTS_DIR}/Bolts/Bolts.framework",
 				"${BUILT_PRODUCTS_DIR}/Parse/Parse.framework",
 				"${BUILT_PRODUCTS_DIR}/ParseUI/ParseUI.framework",
+				"${BUILT_PRODUCTS_DIR}/SDWebImage/SDWebImage.framework",
+				"${BUILT_PRODUCTS_DIR}/SVProgressHUD-0.8.1/SVProgressHUD_0_8_1.framework",
 			);
 			name = "[CP] Embed Pods Frameworks";
 			outputPaths = (
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/Bolts.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/Parse.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/ParseUI.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/SDWebImage.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/SVProgressHUD_0_8_1.framework",
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 			shellPath = /bin/sh;
@@ -311,14 +366,28 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				C0F1814620B5BAE9004961CB /* User.swift in Sources */,
+				C0F1815620B5D715004961CB /* ExtraActionCell.swift in Sources */,
+				C0F1814220B5BACC004961CB /* Article.swift in Sources */,
 				C040D7C820A323C100CFE536 /* ViewController.swift in Sources */,
+				C0F1814C20B5C00C004961CB /* ParseManager.swift in Sources */,
+				C0F1814820B5BB23004961CB /* Bed.swift in Sources */,
+				C0F1815220B5D69E004961CB /* EventDetailsController.swift in Sources */,
 				C071453F20B3DFAF0000B322 /* Extensions.swift in Sources */,
 				C0DFBBED20ADBD900075DCA4 /* SignUpCell.swift in Sources */,
+				C0F1814420B5BADC004961CB /* Event.swift in Sources */,
+				C0F1815420B5D6F0004961CB /* CoverImageCell.swift in Sources */,
 				C0DFBBEA20ADBB730075DCA4 /* LoginController.swift in Sources */,
+				C0F1815820B5D72B004961CB /* DoubleActionsCell.swift in Sources */,
 				C071454220B3E5990000B322 /* TabBarController.swift in Sources */,
+				C0F1814E20B5CCC4004961CB /* ArticleDetailsController.swift in Sources */,
+				C0F1813E20B5B9FE004961CB /* ArticleCell.swift in Sources */,
+				C0F1815020B5D3CE004961CB /* EventsController.swift in Sources */,
 				C0DFBBF020ADBDFF0075DCA4 /* AppBaseViewController.swift in Sources */,
 				C040D7C620A323C100CFE536 /* AppDelegate.swift in Sources */,
+				C0F1813F20B5B9FE004961CB /* ArticlesController.swift in Sources */,
 				C071454820B3F1A00000B322 /* ProfileController.swift in Sources */,
+				C0F1814A20B5BB61004961CB /* Room.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

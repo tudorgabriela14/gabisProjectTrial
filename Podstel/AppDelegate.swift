@@ -25,6 +25,7 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         }
         Parse.initialize(with: configuration)
         saveInstallationObject()
+        ParseManager.shared.registerObjects()
         self.checkIfUserIsAlreadyConnected()
         return true
     }
@@ -68,12 +69,10 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         }
     }
     
-
-    
     func checkIfUserIsAlreadyConnected()  {
         self.window = UIWindow(frame: UIScreen.main.bounds)
         let storyboard = UIStoryboard(name: "Main", bundle: nil)
-        if(PFUser.current() != nil) {
+        if(PFUser.current() == nil) {
             let initialViewController = storyboard.instantiateViewController(withIdentifier: "LoginController")
             
             self.window?.rootViewController = initialViewController

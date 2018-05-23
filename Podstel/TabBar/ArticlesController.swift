@@ -7,16 +7,28 @@
 //
 
 import UIKit
+import SDWebImage
 
-class ArticlesController: UIViewController {
+class ArticlesController: AppBaseViewController {
 
     @IBOutlet weak var tableView: UITableView!
-    let articlesArray = [Article]()
+    var articlesArray = [Article]() {
+        didSet {
+            self.tableView.reloadData()
+        }
+    }
     
     override func viewDidLoad() {
         super.viewDidLoad()
 
-        // Do any additional setup after loading the view.
+        ParseManager.shared.getArticles { (articlesList, error) in
+            if(error != nil) {
+                //show alert
+            }
+            else {
+                self.articlesArray = articlesList
+            }
+        }
     }
 
     override func didReceiveMemoryWarning() {
@@ -32,17 +44,24 @@ extension ArticlesController : UITableViewDelegate, UITableViewDataSource {
     }
     
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        return 3
+        return articlesArray.count
     }
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let articleCell = self.tableView.dequeueReusableCell(withIdentifier: "ArticleCell") as! ArticleCell
-        articleCell.nameLabel.text = "articleName"
-        
+        articleCell.nameLabel.text = articlesArray[indexPath.row].title
+//        articleCell.coverImageView.image =
+        articleCell.coverImageView.sd_setImage(with: URL(string: (articlesArray[indexPath.row].coverImage?.url)!), placeholderImage: UIImage(named: "placeholder.png"))
+        articleCell.index = indexPath.row
         return articleCell
     }
     
     func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
-        return 170
+        return 180
+    }
+    
+    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
+        let controller = segue.destination as! ArticleDetailsController
+        controller.article = articlesArray[(sender as! ArticleCell).index]
     }
 }

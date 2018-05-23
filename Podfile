@@ -8,5 +8,7 @@ target 'Podstel' do
   # Pods for Podstel
   pod 'Parse'
   pod 'ParseUI'
+  pod 'SDWebImage', '~> 4.0'
+  pod 'SVProgressHUD-0.8.1'
 
 end

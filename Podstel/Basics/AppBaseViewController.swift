@@ -22,6 +22,10 @@ class AppBaseViewController: UIViewController {
     }
     
 
+    @IBAction func didTouchBackButton(_ sender: Any) {
+        self.navigationController?.popViewController(animated: true)
+    }
+    
     func simpleAlert(title:String?,message:String?) {
         guard title != nil || message != nil else {
             return

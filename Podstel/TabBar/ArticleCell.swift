@@ -9,14 +9,17 @@
 import UIKit
 
 class ArticleCell: UITableViewCell {
+    
+    var index: Int = 0
     @IBOutlet weak var coverImageView: UIImageView!
     @IBOutlet weak var nameLabel: UILabel!
     @IBOutlet weak var nameView: UIView!
-
+    @IBOutlet weak var shadowCoverView: UIView!
+    
     override func awakeFromNib() {
         super.awakeFromNib()
         // Initialization code
-        
+        shadowCoverView.applyShadow()
         nameView.applyShadow()
     }
 
