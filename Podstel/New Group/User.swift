@@ -13,6 +13,8 @@ class User: PFUser {
 
     @NSManaged var firstName: String
     @NSManaged var lastName: String
+    @NSManaged var avatar: PFFile
+    @NSManaged var country: String
     
     override var parseClassName: String {
         return super.parseClassName

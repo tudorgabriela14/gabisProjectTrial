@@ -10,7 +10,7 @@ import UIKit
 import Parse
 
 class Bed: PFObject,PFSubclassing {
-
+    
     static func parseClassName() -> String {
         return "Bed"
     }

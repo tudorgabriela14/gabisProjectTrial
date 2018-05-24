@@ -22,11 +22,12 @@ class ParseManager {
         User.registerSubclass()
         Bed.registerSubclass()
         Room.registerSubclass()
-    }
-
-    func login(username:String,password:String, block : @escaping SuccessBlock) {
+        Booking.registerSubclass()
+        Participation.registerSubclass()
         
     }
+
+
     
     func getArticles(block: @escaping ArrayBlock<Article>) {
         let query = Article.query()
@@ -41,4 +42,45 @@ class ParseManager {
             block(result as! [Event], error)
         })
     }
+    
+    func attendEvent(event: Event,block: @escaping SuccessBlock) {
+        let relation = event.relation(forKey: "usersGoing")
+        relation.add(PFUser.current()!)
+        event.saveInBackground(block:block)
+        
+        let participationObj = Participation()
+        participationObj.event = event
+        participationObj.participant = PFUser.current() as! User
+        participationObj.saveInBackground(block: block)
+    }
+    
+    func getParticipantsForEvent(event: Event, block:  @escaping ArrayBlock<User> ) {
+        
+        let relation = event.relation(forKey: "usersGoing")
+        relation.query().findObjectsInBackground { (result, error) in
+            block(result as! [User],error)
+        }
+    }
+    
+    func getMyEvents(block:  @escaping ArrayBlock<Event>) {
+        let queryEvents = Participation.query()
+        queryEvents?.includeKey("participant")
+        queryEvents?.includeKey("event")
+        queryEvents?.whereKey("participant", equalTo: PFUser.current()!)
+        queryEvents?.findObjectsInBackground(block: { (objects, error) in
+            var eventsArray = [Event] ()
+            for obj in objects! {
+                eventsArray.append((obj as! Participation).event)
+            }
+            block(eventsArray, error)
+        })
+    }
+    
+    func getRooms(block:  @escaping ArrayBlock<Room>) {
+        let query = Room.query()
+        query?.findObjectsInBackground(block: { (result, error) in
+            block(result as! [Room], error)
+        })
+    }
+    
 }

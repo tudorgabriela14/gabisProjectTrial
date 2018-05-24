@@ -10,5 +10,7 @@ target 'Podstel' do
   pod 'ParseUI'
   pod 'SDWebImage', '~> 4.0'
   pod 'SVProgressHUD-0.8.1'
+  pod 'ViewAnimator'
+  pod 'Hero'
 
 end

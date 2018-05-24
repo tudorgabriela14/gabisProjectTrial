@@ -32,28 +32,44 @@ extension ProfileController : UITableViewDelegate, UITableViewDataSource {
     }
     
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        return 1
+        return 3
     }
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-        let cell = tableView.dequeueReusableCell(withIdentifier: "cellID") as! UITableViewCell
-        cell.textLabel?.text = "Sign Out".localized()
+        let cell = tableView.dequeueReusableCell(withIdentifier: "cellID") as! SettingsCell
+
+        if(indexPath.row == 0) {
+            cell.titleLabel?.text = "Edit card details".localized()
+        }
+        else if(indexPath.row == 1) {
+            cell.titleLabel?.text = "Edit profile".localized()
+        }
+        else if(indexPath.row == 2) {
+            cell.titleLabel?.text = "Sign Out".localized()
+        }
         return cell
+    }
+    
+    func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
+        return 60
     }
     
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
         
-        if indexPath.row == 0 {
-            PFUser.logOutInBackground(block: { (error) in
-                if(error != nil) {
-                   self.simpleAlert(title: "Attention".localized(), message: "An error has occured while trying to log out. Please try again")
-                    return
-                }
-//                let initialViewController = storyboard.instantiateViewController(withIdentifier: "LoginController")
-//
-//                self.window?.rootViewController = initialViewController
-//                self.window?.makeKeyAndVisible()
+        if indexPath.row == 2 {
+            self.simpleAlert(title: "Sign Out", message: "Are you sure you want to disconnect?", handler: { (action) in
+                PFUser.logOutInBackground(block: { (error) in
+                    if(error != nil) {
+                        self.simpleAlert(title: "Attention".localized(), message: "An error has occured while trying to log out. Please try again")
+                        return
+                    }
+                    
+                    let appdelegate = UIApplication.shared.delegate as! AppDelegate
+                    let loginNav = self.storyboard?.instantiateViewController(withIdentifier: "LoginController")
+                    appdelegate.window!.rootViewController = loginNav
+                })
             })
+            
         }
     }
 }

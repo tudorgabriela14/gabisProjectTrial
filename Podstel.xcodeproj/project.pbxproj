@@ -15,6 +15,9 @@
 		C071453F20B3DFAF0000B322 /* Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = C071453E20B3DFAE0000B322 /* Extensions.swift */; };
 		C071454220B3E5990000B322 /* TabBarController.swift in Sources */ = {isa = PBXBuildFile; fileRef = C071454120B3E5990000B322 /* TabBarController.swift */; };
 		C071454820B3F1A00000B322 /* ProfileController.swift in Sources */ = {isa = PBXBuildFile; fileRef = C071454720B3F1A00000B322 /* ProfileController.swift */; };
+		C0DBF35F20B6FC9C00256967 /* SettingsCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = C0DBF35E20B6FC9C00256967 /* SettingsCell.swift */; };
+		C0DBF36120B706B400256967 /* BookingsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = C0DBF36020B706B400256967 /* BookingsViewController.swift */; };
+		C0DBF36320B7072100256967 /* RoomCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = C0DBF36220B7072100256967 /* RoomCell.swift */; };
 		C0DFBBEA20ADBB730075DCA4 /* LoginController.swift in Sources */ = {isa = PBXBuildFile; fileRef = C0DFBBE920ADBB730075DCA4 /* LoginController.swift */; };
 		C0DFBBED20ADBD900075DCA4 /* SignUpCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = C0DFBBEC20ADBD900075DCA4 /* SignUpCell.swift */; };
 		C0DFBBF020ADBDFF0075DCA4 /* AppBaseViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = C0DFBBEF20ADBDFF0075DCA4 /* AppBaseViewController.swift */; };
@@ -32,6 +35,19 @@
 		C0F1815420B5D6F0004961CB /* CoverImageCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = C0F1815320B5D6F0004961CB /* CoverImageCell.swift */; };
 		C0F1815620B5D715004961CB /* ExtraActionCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = C0F1815520B5D715004961CB /* ExtraActionCell.swift */; };
 		C0F1815820B5D72B004961CB /* DoubleActionsCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = C0F1815720B5D72B004961CB /* DoubleActionsCell.swift */; };
+		C0F1815A20B69334004961CB /* DescriptionCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = C0F1815920B69334004961CB /* DescriptionCell.swift */; };
+		C0F1816120B69C0B004961CB /* ParticipantsController.swift in Sources */ = {isa = PBXBuildFile; fileRef = C0F1816020B69C0B004961CB /* ParticipantsController.swift */; };
+		C0F1816320B69C94004961CB /* ParticipantCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = C0F1816220B69C94004961CB /* ParticipantCollectionViewCell.swift */; };
+		C0F1816620B6CFA3004961CB /* SignUpController.swift in Sources */ = {isa = PBXBuildFile; fileRef = C0F1816520B6CFA3004961CB /* SignUpController.swift */; };
+		C0F1816820B6D046004961CB /* SignUpInfoCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = C0F1816720B6D046004961CB /* SignUpInfoCell.swift */; };
+		C0F1816A20B6D053004961CB /* SignUpAvatarCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = C0F1816920B6D053004961CB /* SignUpAvatarCell.swift */; };
+		C0F1816C20B6DA1E004961CB /* MyProfileController.swift in Sources */ = {isa = PBXBuildFile; fileRef = C0F1816B20B6DA1E004961CB /* MyProfileController.swift */; };
+		C0F1816F20B6DAA5004961CB /* CaruselTypeOneCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = C0F1816D20B6DAA5004961CB /* CaruselTypeOneCell.swift */; };
+		C0F1817020B6DAA5004961CB /* CaruselTypeOneCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = C0F1816E20B6DAA5004961CB /* CaruselTypeOneCell.xib */; };
+		C0F1817320B6DE27004961CB /* CaruselCollectionCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = C0F1817120B6DE27004961CB /* CaruselCollectionCell.swift */; };
+		C0F1817420B6DE27004961CB /* CaruselCollectionCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = C0F1817220B6DE27004961CB /* CaruselCollectionCell.xib */; };
+		C0F1817620B6E46A004961CB /* Participation.swift in Sources */ = {isa = PBXBuildFile; fileRef = C0F1817520B6E46A004961CB /* Participation.swift */; };
+		C0F1817820B6F05C004961CB /* Booking.swift in Sources */ = {isa = PBXBuildFile; fileRef = C0F1817720B6F05C004961CB /* Booking.swift */; };
 		E58A03478FD93028AAD279BC /* Pods_Podstel.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 6761458C05BB9A2483784F24 /* Pods_Podstel.framework */; };
 /* End PBXBuildFile section */
 
@@ -49,6 +65,9 @@
 		C071453E20B3DFAE0000B322 /* Extensions.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = Extensions.swift; path = Podstel/Extensions.swift; sourceTree = SOURCE_ROOT; };
 		C071454120B3E5990000B322 /* TabBarController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TabBarController.swift; sourceTree = "<group>"; };
 		C071454720B3F1A00000B322 /* ProfileController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProfileController.swift; sourceTree = "<group>"; };
+		C0DBF35E20B6FC9C00256967 /* SettingsCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SettingsCell.swift; sourceTree = "<group>"; };
+		C0DBF36020B706B400256967 /* BookingsViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BookingsViewController.swift; sourceTree = "<group>"; };
+		C0DBF36220B7072100256967 /* RoomCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RoomCell.swift; sourceTree = "<group>"; };
 		C0DFBBE920ADBB730075DCA4 /* LoginController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginController.swift; sourceTree = "<group>"; };
 		C0DFBBEC20ADBD900075DCA4 /* SignUpCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SignUpCell.swift; sourceTree = "<group>"; };
 		C0DFBBEF20ADBDFF0075DCA4 /* AppBaseViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppBaseViewController.swift; sourceTree = "<group>"; };
@@ -66,6 +85,19 @@
 		C0F1815320B5D6F0004961CB /* CoverImageCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CoverImageCell.swift; sourceTree = "<group>"; };
 		C0F1815520B5D715004961CB /* ExtraActionCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ExtraActionCell.swift; sourceTree = "<group>"; };
 		C0F1815720B5D72B004961CB /* DoubleActionsCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DoubleActionsCell.swift; sourceTree = "<group>"; };
+		C0F1815920B69334004961CB /* DescriptionCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DescriptionCell.swift; sourceTree = "<group>"; };
+		C0F1816020B69C0B004961CB /* ParticipantsController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ParticipantsController.swift; sourceTree = "<group>"; };
+		C0F1816220B69C94004961CB /* ParticipantCollectionViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ParticipantCollectionViewCell.swift; sourceTree = "<group>"; };
+		C0F1816520B6CFA3004961CB /* SignUpController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SignUpController.swift; sourceTree = "<group>"; };
+		C0F1816720B6D046004961CB /* SignUpInfoCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SignUpInfoCell.swift; sourceTree = "<group>"; };
+		C0F1816920B6D053004961CB /* SignUpAvatarCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SignUpAvatarCell.swift; sourceTree = "<group>"; };
+		C0F1816B20B6DA1E004961CB /* MyProfileController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MyProfileController.swift; sourceTree = "<group>"; };
+		C0F1816D20B6DAA5004961CB /* CaruselTypeOneCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CaruselTypeOneCell.swift; sourceTree = "<group>"; };
+		C0F1816E20B6DAA5004961CB /* CaruselTypeOneCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = CaruselTypeOneCell.xib; sourceTree = "<group>"; };
+		C0F1817120B6DE27004961CB /* CaruselCollectionCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CaruselCollectionCell.swift; sourceTree = "<group>"; };
+		C0F1817220B6DE27004961CB /* CaruselCollectionCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = CaruselCollectionCell.xib; sourceTree = "<group>"; };
+		C0F1817520B6E46A004961CB /* Participation.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Participation.swift; sourceTree = "<group>"; };
+		C0F1817720B6F05C004961CB /* Booking.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Booking.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -158,6 +190,12 @@
 			isa = PBXGroup;
 			children = (
 				C071454720B3F1A00000B322 /* ProfileController.swift */,
+				C0F1816B20B6DA1E004961CB /* MyProfileController.swift */,
+				C0F1816D20B6DAA5004961CB /* CaruselTypeOneCell.swift */,
+				C0F1816E20B6DAA5004961CB /* CaruselTypeOneCell.xib */,
+				C0F1817120B6DE27004961CB /* CaruselCollectionCell.swift */,
+				C0F1817220B6DE27004961CB /* CaruselCollectionCell.xib */,
+				C0DBF35E20B6FC9C00256967 /* SettingsCell.swift */,
 			);
 			path = Profile;
 			sourceTree = "<group>";
@@ -175,11 +213,9 @@
 		C071454520B3F11A0000B322 /* Events */ = {
 			isa = PBXGroup;
 			children = (
+				C0F1815D20B69BD1004961CB /* Participants */,
+				C0F1815B20B69BA4004961CB /* Event Details */,
 				C0F1814F20B5D3CE004961CB /* EventsController.swift */,
-				C0F1815120B5D69E004961CB /* EventDetailsController.swift */,
-				C0F1815320B5D6F0004961CB /* CoverImageCell.swift */,
-				C0F1815520B5D715004961CB /* ExtraActionCell.swift */,
-				C0F1815720B5D72B004961CB /* DoubleActionsCell.swift */,
 			);
 			path = Events;
 			sourceTree = "<group>";
@@ -187,6 +223,8 @@
 		C071454620B3F1230000B322 /* Bookings */ = {
 			isa = PBXGroup;
 			children = (
+				C0DBF36020B706B400256967 /* BookingsViewController.swift */,
+				C0DBF36220B7072100256967 /* RoomCell.swift */,
 			);
 			path = Bookings;
 			sourceTree = "<group>";
@@ -196,6 +234,7 @@
 			children = (
 				C0DFBBEB20ADBD740075DCA4 /* Cells */,
 				C0DFBBE920ADBB730075DCA4 /* LoginController.swift */,
+				C0F1816520B6CFA3004961CB /* SignUpController.swift */,
 			);
 			path = Login;
 			sourceTree = "<group>";
@@ -204,6 +243,8 @@
 			isa = PBXGroup;
 			children = (
 				C0DFBBEC20ADBD900075DCA4 /* SignUpCell.swift */,
+				C0F1816720B6D046004961CB /* SignUpInfoCell.swift */,
+				C0F1816920B6D053004961CB /* SignUpAvatarCell.swift */,
 			);
 			path = Cells;
 			sourceTree = "<group>";
@@ -224,9 +265,40 @@
 				C0F1814520B5BAE9004961CB /* User.swift */,
 				C0F1814720B5BB23004961CB /* Bed.swift */,
 				C0F1814920B5BB61004961CB /* Room.swift */,
+				C0F1817520B6E46A004961CB /* Participation.swift */,
+				C0F1817720B6F05C004961CB /* Booking.swift */,
 			);
 			name = Models;
 			path = "New Group";
+			sourceTree = "<group>";
+		};
+		C0F1815B20B69BA4004961CB /* Event Details */ = {
+			isa = PBXGroup;
+			children = (
+				C0F1815C20B69BBE004961CB /* Cells */,
+				C0F1815120B5D69E004961CB /* EventDetailsController.swift */,
+			);
+			path = "Event Details";
+			sourceTree = "<group>";
+		};
+		C0F1815C20B69BBE004961CB /* Cells */ = {
+			isa = PBXGroup;
+			children = (
+				C0F1815320B5D6F0004961CB /* CoverImageCell.swift */,
+				C0F1815520B5D715004961CB /* ExtraActionCell.swift */,
+				C0F1815720B5D72B004961CB /* DoubleActionsCell.swift */,
+				C0F1815920B69334004961CB /* DescriptionCell.swift */,
+			);
+			path = Cells;
+			sourceTree = "<group>";
+		};
+		C0F1815D20B69BD1004961CB /* Participants */ = {
+			isa = PBXGroup;
+			children = (
+				C0F1816020B69C0B004961CB /* ParticipantsController.swift */,
+				C0F1816220B69C94004961CB /* ParticipantCollectionViewCell.swift */,
+			);
+			path = Participants;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -293,7 +365,9 @@
 			files = (
 				C040D7D020A323C100CFE536 /* LaunchScreen.storyboard in Resources */,
 				C040D7CD20A323C100CFE536 /* Assets.xcassets in Resources */,
+				C0F1817020B6DAA5004961CB /* CaruselTypeOneCell.xib in Resources */,
 				C040D7CB20A323C100CFE536 /* Main.storyboard in Resources */,
+				C0F1817420B6DE27004961CB /* CaruselCollectionCell.xib in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -341,18 +415,22 @@
 			inputPaths = (
 				"${SRCROOT}/Pods/Target Support Files/Pods-Podstel/Pods-Podstel-frameworks.sh",
 				"${BUILT_PRODUCTS_DIR}/Bolts/Bolts.framework",
+				"${BUILT_PRODUCTS_DIR}/Hero/Hero.framework",
 				"${BUILT_PRODUCTS_DIR}/Parse/Parse.framework",
 				"${BUILT_PRODUCTS_DIR}/ParseUI/ParseUI.framework",
 				"${BUILT_PRODUCTS_DIR}/SDWebImage/SDWebImage.framework",
 				"${BUILT_PRODUCTS_DIR}/SVProgressHUD-0.8.1/SVProgressHUD_0_8_1.framework",
+				"${BUILT_PRODUCTS_DIR}/ViewAnimator/ViewAnimator.framework",
 			);
 			name = "[CP] Embed Pods Frameworks";
 			outputPaths = (
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/Bolts.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/Hero.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/Parse.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/ParseUI.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/SDWebImage.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/SVProgressHUD_0_8_1.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/ViewAnimator.framework",
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 			shellPath = /bin/sh;
@@ -366,27 +444,41 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				C0F1816320B69C94004961CB /* ParticipantCollectionViewCell.swift in Sources */,
+				C0F1817820B6F05C004961CB /* Booking.swift in Sources */,
 				C0F1814620B5BAE9004961CB /* User.swift in Sources */,
+				C0F1816C20B6DA1E004961CB /* MyProfileController.swift in Sources */,
 				C0F1815620B5D715004961CB /* ExtraActionCell.swift in Sources */,
 				C0F1814220B5BACC004961CB /* Article.swift in Sources */,
+				C0F1817620B6E46A004961CB /* Participation.swift in Sources */,
 				C040D7C820A323C100CFE536 /* ViewController.swift in Sources */,
+				C0F1816F20B6DAA5004961CB /* CaruselTypeOneCell.swift in Sources */,
 				C0F1814C20B5C00C004961CB /* ParseManager.swift in Sources */,
+				C0F1816A20B6D053004961CB /* SignUpAvatarCell.swift in Sources */,
 				C0F1814820B5BB23004961CB /* Bed.swift in Sources */,
 				C0F1815220B5D69E004961CB /* EventDetailsController.swift in Sources */,
 				C071453F20B3DFAF0000B322 /* Extensions.swift in Sources */,
+				C0F1815A20B69334004961CB /* DescriptionCell.swift in Sources */,
 				C0DFBBED20ADBD900075DCA4 /* SignUpCell.swift in Sources */,
 				C0F1814420B5BADC004961CB /* Event.swift in Sources */,
 				C0F1815420B5D6F0004961CB /* CoverImageCell.swift in Sources */,
+				C0F1816620B6CFA3004961CB /* SignUpController.swift in Sources */,
 				C0DFBBEA20ADBB730075DCA4 /* LoginController.swift in Sources */,
+				C0DBF35F20B6FC9C00256967 /* SettingsCell.swift in Sources */,
+				C0DBF36120B706B400256967 /* BookingsViewController.swift in Sources */,
+				C0F1816820B6D046004961CB /* SignUpInfoCell.swift in Sources */,
 				C0F1815820B5D72B004961CB /* DoubleActionsCell.swift in Sources */,
 				C071454220B3E5990000B322 /* TabBarController.swift in Sources */,
 				C0F1814E20B5CCC4004961CB /* ArticleDetailsController.swift in Sources */,
 				C0F1813E20B5B9FE004961CB /* ArticleCell.swift in Sources */,
+				C0F1816120B69C0B004961CB /* ParticipantsController.swift in Sources */,
 				C0F1815020B5D3CE004961CB /* EventsController.swift in Sources */,
 				C0DFBBF020ADBDFF0075DCA4 /* AppBaseViewController.swift in Sources */,
 				C040D7C620A323C100CFE536 /* AppDelegate.swift in Sources */,
+				C0F1817320B6DE27004961CB /* CaruselCollectionCell.swift in Sources */,
 				C0F1813F20B5B9FE004961CB /* ArticlesController.swift in Sources */,
 				C071454820B3F1A00000B322 /* ProfileController.swift in Sources */,
+				C0DBF36320B7072100256967 /* RoomCell.swift in Sources */,
 				C0F1814A20B5BB61004961CB /* Room.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

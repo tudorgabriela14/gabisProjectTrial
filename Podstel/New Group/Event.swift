@@ -14,10 +14,20 @@ class Event: PFObject, PFSubclassing {
     @NSManaged var eventDescription : String
     @NSManaged var eventCover: PFFile?
     @NSManaged var date: Date?
-    @NSManaged var usersGoing: PFFile?
     @NSManaged var paid: Bool
+    @NSManaged var usersGoing: PFRelation<User>
+    
+    @NSManaged var location:String
+    @NSManaged var eventLocation:PFGeoPoint
     
     static func parseClassName() -> String {
         return "Event"
+    }
+}
+
+extension PFGeoPoint {
+    
+    var location:CLLocation {
+        return CLLocation(latitude: self.latitude, longitude: self.longitude)
     }
 }

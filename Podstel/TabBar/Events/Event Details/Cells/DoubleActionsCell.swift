@@ -29,10 +29,10 @@ class DoubleActionsCell: UITableViewCell {
     }
 
     @IBAction func seeParticipants(_ sender: Any) {
-        self.delegate.didPressSeeParticipants()
+        self.delegate?.didPressSeeParticipants()
     }
     
     @IBAction func attendEvent(_ sender: Any) {
-        self.delegate.didPressAttend()
+        self.delegate?.didPressAttend()
     }
 }

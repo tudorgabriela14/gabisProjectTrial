@@ -10,7 +10,15 @@ import UIKit
 import Parse
 
 class Room: PFObject, PFSubclassing {
-
+    @NSManaged var nbBeds: NSNumber
+    @NSManaged var privateBathroom: Bool
+    @NSManaged var photo1: PFFile
+    @NSManaged var photo2: PFFile
+    @NSManaged var photo3: PFFile
+    @NSManaged var roomName: NSString
+    @NSManaged var roomSize: NSString
+//    @NSManaged var description: NSString
+    
     static func parseClassName() -> String {
         return "Room"
     }
