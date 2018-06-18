@@ -317,6 +317,13 @@ extension Date {
     func myCollectionString() -> String {
         return DateFormatter.MyCollectionFormat.string(from: self as Date)
     }
+
+    func getMonthName() -> String {
+        let dateFormatter = DateFormatter()
+        dateFormatter.dateFormat = "MMM"
+        let strMonth = dateFormatter.string(from: self)
+        return strMonth
+    }
 }
 
 extension NSDate {

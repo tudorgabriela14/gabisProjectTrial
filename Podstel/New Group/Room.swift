@@ -16,11 +16,20 @@ class Room: PFObject, PFSubclassing {
     @NSManaged var photo2: PFFile
     @NSManaged var photo3: PFFile
     @NSManaged var roomName: NSString
-    @NSManaged var roomSize: NSString
+    @NSManaged var roomSize: NSNumber
 //    @NSManaged var description: NSString
     
     static func parseClassName() -> String {
         return "Room"
+    }
+    
+    override open func isEqual(_ object: Any?) -> Bool {
+        if let object = object as? Room {
+            if(object.objectId == self.objectId) {
+                return true
+            }
+        }
+        return false
     }
 
 }

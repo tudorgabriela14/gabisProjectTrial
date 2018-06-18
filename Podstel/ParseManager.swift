@@ -83,4 +83,46 @@ class ParseManager {
         })
     }
     
+    
+    func getAvailableBeds(checkInDate:Date, checkOutDate:Date, block: @escaping ArrayBlock<Bed>) {
+        let query1 = Booking.query()
+        query1?.whereKey("startDate", lessThanOrEqualTo: checkInDate)
+        query1?.whereKey("endDate", greaterThan: checkInDate)
+        
+        let query2 = Booking.query()
+        query2?.whereKey("startDate", lessThanOrEqualTo: checkOutDate)
+        query2?.whereKey("endDate", greaterThan: checkOutDate)
+        
+        let query3 = Booking.query()
+        query3?.whereKey("startDate", greaterThanOrEqualTo: checkInDate)
+        query3?.whereKey("endDate", lessThan: checkOutDate)
+        
+        let totalQuery = PFQuery.orQuery(withSubqueries: [query1!, query2!, query3!]);
+        
+        let finalQuery = Bed.query()
+        finalQuery?.includeKey("room")
+        finalQuery?.whereKey("objectId", doesNotMatchKey: "bedId", in: totalQuery)
+        finalQuery?.findObjectsInBackground(block: { (objects, error) in
+            if(objects != nil) {
+                block(objects as! [Bed], error)
+                return
+            }
+            block([], error)
+        })
+    }
+    
+    //get rooms for each bed available
+    func getRoomsForBeds(availableBedsArray : [Bed]) -> [Room] {
+    
+        var availableRoomsArray = [Room]()
+        
+        for bed in availableBedsArray {
+            if(!availableRoomsArray.contains(bed.room)) {
+                availableRoomsArray.append(bed.room)
+            }
+        }
+        
+        return availableRoomsArray
+    }
+    
 }
