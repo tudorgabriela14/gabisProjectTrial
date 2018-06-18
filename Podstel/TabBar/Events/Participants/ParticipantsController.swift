@@ -48,7 +48,7 @@ extension ParticipantsController : UICollectionViewDelegate, UICollectionViewDat
     func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
         let participantCell = self.collectionView.dequeueReusableCell(withReuseIdentifier: "participantCell", for: indexPath) as! ParticipantCollectionViewCell
         participantCell.firstNameLabel.text = self.participantsArray[indexPath.item].firstName
-        participantCell.avatarImageView.sd_setImage(with: URL(string: (self.participantsArray[indexPath.item].avatar.url)!), placeholderImage: UIImage(named: "placeholder.png"))
+        participantCell.avatarImageView.sd_setImage(with: URL(string: (self.participantsArray[indexPath.item].avatar.url)!), placeholderImage: UIImage(named: "avatarPlaceholder"))
         
         return participantCell
     }

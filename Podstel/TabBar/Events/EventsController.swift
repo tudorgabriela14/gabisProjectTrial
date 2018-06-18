@@ -7,6 +7,7 @@
 //
 
 import UIKit
+import SVProgressHUD_0_8_1
 
 class EventsController: UIViewController {
 
@@ -19,8 +20,13 @@ class EventsController: UIViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
-
+    }
+    
+    override func viewWillAppear(_ animated: Bool) {
+        super.viewWillAppear(animated)
+        SVProgressHUD.show()
         ParseManager.shared.getEvents { (eventsList, error) in
+            SVProgressHUD.dismiss()
             if(error != nil) {
                 //show alert
             }

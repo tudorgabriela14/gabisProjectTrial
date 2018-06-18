@@ -9,6 +9,7 @@
 import UIKit
 import Parse
 import SDWebImage
+import SVProgressHUD_0_8_1
 
 class MyProfileController: AppBaseViewController {
 
@@ -22,7 +23,8 @@ class MyProfileController: AppBaseViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         
-        self.avatarImageView.sd_setImage(with: URL(string: ((PFUser.current() as! User).avatar.url)!), placeholderImage: UIImage(named: "placeholder.png"))
+        self.avatarImageView.sd_setImage(with: URL(string: ((PFUser.current() as! User).avatar.url)!), placeholderImage: UIImage(named: "avatarPlaceholder"))
+        self.nameLabel.text = (PFUser.current() as! User).firstName + " \((PFUser.current() as! User).lastName.first!)."
 
         // Do any additional setup after loading the view.
     }
@@ -35,10 +37,21 @@ class MyProfileController: AppBaseViewController {
     override func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(animated)
         self.tableView.register(UINib(nibName: "CaruselTypeOneCell",   bundle: nil), forCellReuseIdentifier: "CaruselTypeOneCell")
+        SVProgressHUD.show()
         ParseManager.shared.getMyEvents { (eventsArray, error) in
             if(error == nil) {
                 self.myEvents = eventsArray
                 self.tableView.reloadData()
+                ParseManager.shared.getMyReservations(block: { (bookingsArray, error) in
+                    SVProgressHUD.dismiss()
+                    if(error == nil) {
+                        self.myBookings = bookingsArray
+                        self.tableView.reloadData()
+                    }
+                })
+            }
+            else {
+                SVProgressHUD.dismiss()
             }
         }
     }
@@ -61,7 +74,8 @@ extension MyProfileController: UITableViewDataSource, UITableViewDelegate {
             let caruselCell = tableView.dequeueReusableCell(withIdentifier: "CaruselTypeOneCell") as! CaruselTypeOneCell
             caruselCell.titleLabel.text = "My Events (\(self.myEvents.count))"
             caruselCell.objectsArray = myEvents
-            caruselCell.collectionView.reloadData()
+            caruselCell.isBooking = false
+            
             if(myEvents.count == 0) {
                 caruselCell.placeholderLabel.text = "No events to be displayed yet."
                 caruselCell.placeholderLabel.backgroundColor = UIColor.white
@@ -70,12 +84,15 @@ extension MyProfileController: UITableViewDataSource, UITableViewDelegate {
             else {
                 caruselCell.placeholderLabel.isHidden = true
             }
+            caruselCell.collectionView.reloadData()
             return caruselCell
         }
         else {
             let caruselCell = tableView.dequeueReusableCell(withIdentifier: "CaruselTypeOneCell") as! CaruselTypeOneCell
             caruselCell.titleLabel.text = "My Bookings (\(self.myBookings.count))"
+                caruselCell.isBooking = true
             caruselCell.bookingsArray = myBookings
+        
             if(myBookings.count == 0) {
                 caruselCell.placeholderLabel.text = "No booking to be displayed yet."
                 caruselCell.placeholderLabel.backgroundColor = UIColor.white
@@ -92,5 +109,5 @@ extension MyProfileController: UITableViewDataSource, UITableViewDelegate {
     func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
         return UITableViewAutomaticDimension
     }
-    
 }
+

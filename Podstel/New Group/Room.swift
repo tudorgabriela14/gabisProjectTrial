@@ -17,7 +17,7 @@ class Room: PFObject, PFSubclassing {
     @NSManaged var photo3: PFFile
     @NSManaged var roomName: NSString
     @NSManaged var roomSize: NSNumber
-//    @NSManaged var description: NSString
+    @NSManaged var roomDescription: NSString
     
     static func parseClassName() -> String {
         return "Room"

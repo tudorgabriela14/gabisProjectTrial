@@ -18,7 +18,7 @@ class LoginController: AppBaseViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
-
+        self.hideKeyboardWhenTappedAround()
         // Do any additional setup after loading the view.
     }
 
@@ -29,7 +29,7 @@ class LoginController: AppBaseViewController {
 
     @IBAction func connect(_ sender: Any) {
         if(self.validateFields()) {
-            PFUser.logInWithUsername(inBackground: self.emailTextField.text!, password: self.passwordTextField.text!, block: { (user, error) in
+            PFUser.logInWithUsername(inBackground: self.emailTextField.text!.lowercased(), password: self.passwordTextField.text!, block: { (user, error) in
                 if(user != nil) {                    
                     let tabBarVC = self.storyBoard.instantiateViewController(withIdentifier: "TabBarController")
                     self.present(tabBarVC, animated: true, completion: nil)

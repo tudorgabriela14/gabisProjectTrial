@@ -15,7 +15,7 @@ class Booking: PFObject, PFSubclassing {
     @NSManaged var startDate: NSDate
     @NSManaged var endDate: NSDate
     @NSManaged var currency: NSString
-    @NSManaged var bedId: NSDate
+    @NSManaged var bedId: NSString
     @NSManaged var price: NSNumber
     
     static func parseClassName() -> String {

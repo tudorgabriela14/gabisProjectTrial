@@ -12,5 +12,6 @@ target 'Podstel' do
   pod 'SVProgressHUD-0.8.1'
   pod 'ViewAnimator'
   pod 'Hero'
+  pod 'IQKeyboardManager'
 
 end

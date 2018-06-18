@@ -29,7 +29,16 @@ class ArticleDetailsController: AppBaseViewController {
         // Dispose of any resources that can be recreated.
     }
     
-
+    @IBAction func fbShare(_ sender: Any) {
+        let activityViewController = UIActivityViewController(activityItems: ["Check out this awesome article \"\(article.title)\" on Podstel app!"], applicationActivities: nil)
+//        activityViewController.popoverPresentationController?.sourceView = controller.view // so that iPads won't crash
+        // exclude some activity types from the list (optional)
+        activityViewController.excludedActivityTypes = [ UIActivityType.airDrop ]
+        
+        // present the view controller
+        self.present(activityViewController, animated: true, completion: nil)
+    }
+    
     /*
     // MARK: - Navigation
 

@@ -8,6 +8,7 @@
 
 import UIKit
 import SDWebImage
+import SVProgressHUD_0_8_1
 
 class ArticlesController: AppBaseViewController {
 
@@ -20,8 +21,12 @@ class ArticlesController: AppBaseViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
-
+    }
+    
+    override func viewWillAppear(_ animated: Bool) {
+        SVProgressHUD.show()
         ParseManager.shared.getArticles { (articlesList, error) in
+            SVProgressHUD.dismiss()
             if(error != nil) {
                 //show alert
             }

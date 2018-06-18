@@ -37,7 +37,9 @@ class ParseManager {
     }
     
     func getEvents(block: @escaping ArrayBlock<Event>) {
+        
         let query = Event.query()
+        query?.whereKey("date", greaterThanOrEqualTo: NSDate())
         query?.findObjectsInBackground(block: { (result, error) in
             block(result as! [Event], error)
         })
@@ -69,10 +71,27 @@ class ParseManager {
         queryEvents?.whereKey("participant", equalTo: PFUser.current()!)
         queryEvents?.findObjectsInBackground(block: { (objects, error) in
             var eventsArray = [Event] ()
-            for obj in objects! {
-                eventsArray.append((obj as! Participation).event)
+            if(error == nil) {
+                for obj in objects! {
+                    eventsArray.append((obj as! Participation).event)
+                }
             }
             block(eventsArray, error)
+        })
+    }
+    
+    func getMyReservations(block: @escaping ArrayBlock<Booking>) {
+        let queryBookings = Booking.query()
+        queryBookings?.includeKey("user")
+        queryBookings?.whereKey("user", equalTo: PFUser.current()!)
+        queryBookings?.findObjectsInBackground(block: { (bookings, error) in
+            var bookingsArray = [Booking]()
+            if(error == nil) {
+                for booking in bookings! {
+                    bookingsArray.append(booking as! Booking)
+                }
+            }
+            block(bookingsArray, error)
         })
     }
     
@@ -80,6 +99,17 @@ class ParseManager {
         let query = Room.query()
         query?.findObjectsInBackground(block: { (result, error) in
             block(result as! [Room], error)
+        })
+    }
+    
+    func getRoomBy(bedId: String,block: @escaping (Bed?,Error?)->Void) {
+        let query = Bed.query()
+        query?.whereKey("objectId", equalTo: bedId)
+        query?.includeKey("bed")
+        query?.findObjectsInBackground(block: { (bed, error) in
+            if((error) == nil) {
+                block(bed as! Bed,error)
+            }
         })
     }
     
@@ -96,6 +126,7 @@ class ParseManager {
         let query3 = Booking.query()
         query3?.whereKey("startDate", greaterThanOrEqualTo: checkInDate)
         query3?.whereKey("endDate", lessThan: checkOutDate)
+
         
         let totalQuery = PFQuery.orQuery(withSubqueries: [query1!, query2!, query3!]);
         

@@ -1,37 +1,32 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="13771" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="14113" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES">
     <device id="retina4_7" orientation="portrait">
         <adaptation id="fullscreen"/>
     </device>
     <dependencies>
         <deployment identifier="iOS"/>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="13772"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="14088"/>
         <capability name="Safe area layout guides" minToolsVersion="9.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
-    <customFonts key="customFonts">
-        <array key="GillSans.ttc">
-            <string>GillSans-SemiBold</string>
-        </array>
-    </customFonts>
     <objects>
         <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner"/>
         <placeholder placeholderIdentifier="IBFirstResponder" id="-2" customClass="UIResponder"/>
         <collectionViewCell opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" reuseIdentifier="CaruselCollectionCell" id="gTV-IL-0wX" customClass="CaruselCollectionCell" customModule="Podstel" customModuleProvider="target">
-            <rect key="frame" x="0.0" y="0.0" width="257" height="125"/>
+            <rect key="frame" x="0.0" y="0.0" width="317" height="197"/>
             <autoresizingMask key="autoresizingMask"/>
             <view key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center">
-                <rect key="frame" x="0.0" y="0.0" width="257" height="125"/>
+                <rect key="frame" x="0.0" y="0.0" width="317" height="197"/>
                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                 <subviews>
                     <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="placeholder" translatesAutoresizingMaskIntoConstraints="NO" id="ed8-ep-46Z">
-                        <rect key="frame" x="10" y="10" width="237" height="95"/>
+                        <rect key="frame" x="10" y="10" width="297" height="167"/>
                     </imageView>
                     <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="Tvm-Mw-8Io">
-                        <rect key="frame" x="20" y="65" width="217" height="50"/>
+                        <rect key="frame" x="20" y="137" width="277" height="50"/>
                         <subviews>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="3Nn-n6-Wia">
-                                <rect key="frame" x="89.5" y="15" width="38" height="20"/>
+                                <rect key="frame" x="119.5" y="15" width="38" height="20"/>
                                 <fontDescription key="fontDescription" name="GillSans-SemiBold" family="Gill Sans" pointSize="16"/>
                                 <nil key="textColor"/>
                                 <nil key="highlightedColor"/>
@@ -44,38 +39,79 @@
                             <constraint firstItem="3Nn-n6-Wia" firstAttribute="centerY" secondItem="Tvm-Mw-8Io" secondAttribute="centerY" id="wWv-1m-DnJ"/>
                         </constraints>
                     </view>
-                    <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="checkedIcon" translatesAutoresizingMaskIntoConstraints="NO" id="bGc-1l-jbb">
-                        <rect key="frame" x="226" y="54" width="22" height="22"/>
+                    <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="checkedIcon" translatesAutoresizingMaskIntoConstraints="NO" id="bGc-1l-jbb">
+                        <rect key="frame" x="286" y="126" width="22" height="22"/>
                         <constraints>
                             <constraint firstAttribute="height" constant="22" id="MO9-2G-4H6"/>
                             <constraint firstAttribute="width" constant="22" id="uU5-Gy-reI"/>
                         </constraints>
+                        <userDefinedRuntimeAttributes>
+                            <userDefinedRuntimeAttribute type="number" keyPath="layer.cornerRadius">
+                                <integer key="value" value="9"/>
+                            </userDefinedRuntimeAttribute>
+                            <userDefinedRuntimeAttribute type="boolean" keyPath="layer.masksToBounds" value="YES"/>
+                        </userDefinedRuntimeAttributes>
                     </imageView>
+                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="0 nights" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Ijz-xW-pen">
+                        <rect key="frame" x="20" y="20" width="45" height="17"/>
+                        <color key="backgroundColor" red="0.994873046875" green="0.93984190663888889" blue="0.51545335112222224" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                        <fontDescription key="fontDescription" name="GillSans-SemiBoldItalic" family="Gill Sans" pointSize="14"/>
+                        <nil key="textColor"/>
+                        <nil key="highlightedColor"/>
+                    </label>
+                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="12 /n JUN" textAlignment="right" lineBreakMode="wordWrap" numberOfLines="2" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="hbl-zk-Lki">
+                        <rect key="frame" x="242" y="20" width="55" height="60"/>
+                        <color key="backgroundColor" white="1" alpha="0.59999999999999998" colorSpace="calibratedWhite"/>
+                        <constraints>
+                            <constraint firstAttribute="height" constant="60" id="hro-T9-g9H"/>
+                            <constraint firstAttribute="width" constant="55" id="mgK-HA-dq5"/>
+                        </constraints>
+                        <fontDescription key="fontDescription" name="GillSans-UltraBold" family="Gill Sans" pointSize="17"/>
+                        <color key="textColor" red="0.11930768" green="0.51008309139999997" blue="0.83405377540000003" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                        <nil key="highlightedColor"/>
+                    </label>
+                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="starting from" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="few-cY-nog">
+                        <rect key="frame" x="143" y="20" width="89" height="17"/>
+                        <color key="backgroundColor" red="0.9948730469" green="0.9398419066" blue="0.51545335110000001" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                        <fontDescription key="fontDescription" name="GillSans-BoldItalic" family="Gill Sans" pointSize="14"/>
+                        <nil key="textColor"/>
+                        <nil key="highlightedColor"/>
+                    </label>
                 </subviews>
             </view>
             <constraints>
+                <constraint firstItem="hbl-zk-Lki" firstAttribute="top" secondItem="gTV-IL-0wX" secondAttribute="top" constant="20" id="0BT-Uw-ona"/>
+                <constraint firstItem="few-cY-nog" firstAttribute="top" secondItem="hbl-zk-Lki" secondAttribute="top" id="5VK-bH-ZEm"/>
+                <constraint firstItem="Ijz-xW-pen" firstAttribute="leading" secondItem="ed8-ep-46Z" secondAttribute="leading" constant="10" id="7a4-Ek-J8X"/>
                 <constraint firstAttribute="trailing" secondItem="Tvm-Mw-8Io" secondAttribute="trailing" constant="20" id="IlF-ss-DxY"/>
+                <constraint firstItem="hbl-zk-Lki" firstAttribute="leading" secondItem="few-cY-nog" secondAttribute="trailing" constant="10" id="Jq2-9h-Ngg"/>
                 <constraint firstItem="Tvm-Mw-8Io" firstAttribute="leading" secondItem="gTV-IL-0wX" secondAttribute="leading" constant="20" id="WFh-Kl-hfF"/>
                 <constraint firstItem="bGc-1l-jbb" firstAttribute="top" secondItem="Tvm-Mw-8Io" secondAttribute="top" constant="-11" id="Zuc-2R-laP"/>
                 <constraint firstItem="ed8-ep-46Z" firstAttribute="top" secondItem="gTV-IL-0wX" secondAttribute="top" constant="10" id="awf-Wr-xka"/>
                 <constraint firstItem="ed8-ep-46Z" firstAttribute="leading" secondItem="gTV-IL-0wX" secondAttribute="leading" constant="10" id="cng-yj-uaZ"/>
+                <constraint firstItem="Ijz-xW-pen" firstAttribute="top" secondItem="ed8-ep-46Z" secondAttribute="top" constant="10" id="eaq-vS-mpE"/>
                 <constraint firstItem="bGc-1l-jbb" firstAttribute="leading" secondItem="Tvm-Mw-8Io" secondAttribute="trailing" constant="-11" id="h53-Pj-Kt0"/>
                 <constraint firstAttribute="trailing" secondItem="ed8-ep-46Z" secondAttribute="trailing" constant="10" id="plS-tu-rcO"/>
                 <constraint firstAttribute="bottom" secondItem="ed8-ep-46Z" secondAttribute="bottom" constant="20" id="rTM-oe-6Nb"/>
+                <constraint firstAttribute="trailing" secondItem="hbl-zk-Lki" secondAttribute="trailing" constant="20" id="vIF-VK-vQb"/>
                 <constraint firstAttribute="bottom" secondItem="Tvm-Mw-8Io" secondAttribute="bottom" constant="10" id="zi1-ro-oo4"/>
             </constraints>
             <viewLayoutGuide key="safeArea" id="ZTg-uK-7eu"/>
-            <size key="customSize" width="257" height="125"/>
+            <size key="customSize" width="317" height="197"/>
             <connections>
+                <outlet property="checkedImageView" destination="bGc-1l-jbb" id="LAm-71-0BN"/>
                 <outlet property="eventCoverImageView" destination="ed8-ep-46Z" id="DhB-et-0UD"/>
                 <outlet property="eventNameLabel" destination="3Nn-n6-Wia" id="mgE-rk-7xC"/>
+                <outlet property="nightForBookingLabel" destination="Ijz-xW-pen" id="Ayg-m5-KWz"/>
+                <outlet property="startDateLabel" destination="hbl-zk-Lki" id="88X-3b-mWF"/>
+                <outlet property="startingFromLabel" destination="few-cY-nog" id="QoJ-N4-U8r"/>
                 <outlet property="titleView" destination="Tvm-Mw-8Io" id="R2s-fm-BtC"/>
             </connections>
-            <point key="canvasLocation" x="128.5" y="89.5"/>
+            <point key="canvasLocation" x="144.5" y="54.5"/>
         </collectionViewCell>
     </objects>
     <resources>
         <image name="checkedIcon" width="32" height="31"/>
-        <image name="placeholder" width="480" height="319"/>
+        <image name="placeholder" width="600" height="450"/>
     </resources>
 </document>

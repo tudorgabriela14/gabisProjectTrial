@@ -16,11 +16,15 @@ class BookingsViewController: UIViewController {
     @IBOutlet weak var startDatetextField: UITextField!
     @IBOutlet weak var endDateTextField: UITextField!
     @IBOutlet weak var tableView: UITableView!
+    @IBOutlet weak var appliedFiltersImage: UIImageView!
     
+    
+    var hasFilters: Bool = false
     var startDate : Date?
     var endDate : Date?
     
     let datePicker = UIDatePicker()
+    var bedsGroupedByRoomDict :Dictionary<Room, [Bed]>?
     
     var roomsArray = [Room]() {
         didSet {
@@ -29,15 +33,13 @@ class BookingsViewController: UIViewController {
     }
     override func viewDidLoad() {
         super.viewDidLoad()
-        ParseManager.shared.getRooms{ (roomList, error) in
-            if(error != nil) {
-                //show alert
-            }
-            else {
-                self.roomsArray = roomList
-            }
-        }
         showDatePicker()
+    }
+    
+    override func viewWillAppear(_ animated: Bool) {
+        super.viewWillAppear(animated)
+        
+        self.getAllRooms()
     }
 
     override func didReceiveMemoryWarning() {
@@ -152,16 +154,51 @@ class BookingsViewController: UIViewController {
 
    
     @IBAction func filterRooms(_ sender: Any) {
-        SVProgressHUD.show()
-        ParseManager.shared.getAvailableBeds(checkInDate: startDate!, checkOutDate: endDate!) { (availableBedsArray, error) in
-            SVProgressHUD.dismiss()
-            print("get rooms \(availableBedsArray)")
-            
-            
-            let bedsGroupedByRoomDict = Dictionary(grouping: availableBedsArray, by: {$0.room})
-            self.roomsArray = ParseManager.shared.getRoomsForBeds(availableBedsArray: availableBedsArray)
+        if self.hasFilters {
+           self.getAllRooms()
+        }
+        else {
+            if(startDate != nil && endDate != nil && self.calculateNbNights() > 0) {
+                self.appliedFiltersImage.isHidden = false
+                self.hasFilters = true
+                SVProgressHUD.show()
+                ParseManager.shared.getAvailableBeds(checkInDate: startDate!, checkOutDate: endDate!) { (availableBedsArray, error) in
+                    SVProgressHUD.dismiss()
+                    print("get rooms \(availableBedsArray)")
+        
+                    self.bedsGroupedByRoomDict?.removeAll()
+                    self.roomsArray.removeAll()
+                    self.bedsGroupedByRoomDict = Dictionary(grouping: availableBedsArray, by: {$0.room})
+                    self.roomsArray = ParseManager.shared.getRoomsForBeds(availableBedsArray: availableBedsArray)
+                    print(self.roomsArray)
+                }
+            }
+            else {
+                self.showAlert(title: "Attention", description: "The minimal period you can book, is one night. Please make sure you selected a valid check-in and check-out interval.")
+            }
         }
     }
+    
+    func getAllRooms() {
+        self.appliedFiltersImage.isHidden = true
+        self.hasFilters = false
+        self.startDate = nil
+        self.endDate = nil
+        self.startDatetextField.text = ""
+        self.endDateTextField.text = ""
+        
+        SVProgressHUD.show()
+        ParseManager.shared.getRooms{ (roomList, error) in
+            SVProgressHUD.dismiss()
+            if(error != nil) {
+                //show alert
+            }
+            else {
+                self.roomsArray = roomList
+            }
+        }
+    }
+
 }
 
 extension BookingsViewController : UITableViewDelegate, UITableViewDataSource {
@@ -192,5 +229,41 @@ extension BookingsViewController : UITableViewDelegate, UITableViewDataSource {
     
     func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
         return UITableViewAutomaticDimension
+    }
+    
+    func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
+        let selectedRoom = roomsArray[indexPath.row]
+        if(self.hasFilters && (self.startDate != nil) && (self.endDate != nil) ) {
+            if(self.calculateNbNights() > 0) {
+                if let viewController = UIStoryboard(name: "Main", bundle: nil).instantiateViewController(withIdentifier: "RoomDetailsViewController") as? RoomDetailsViewController {
+                    viewController.selectedRoom = selectedRoom
+                    viewController.startDate = self.startDate
+                    viewController.endDate = self.endDate
+                    viewController.bedsForRoom = self.bedsGroupedByRoomDict![selectedRoom]!
+                    if let navigator = navigationController {
+                        navigator.pushViewController(viewController, animated: true)
+                    }
+                }
+            }
+            else {
+               self.showAlert(title: "Attention", description: "The minimal period you can book, is one night. Please make sure you selected a valid check-in and check-out interval.")
+            }
+        }
+        else {
+            self.showAlert(title: "Attention", description: "Before you proceed to book a bed, you must filter the rooms for a check-in and check-out interval.")
+        }
+    }
+    
+    func calculateNbNights() -> Int {
+        let calendar = NSCalendar.current
+        let components = calendar.dateComponents([Calendar.Component.day], from: startDate!, to: endDate!)
+        return components.day!
+    }
+    
+    func showAlert(title: String, description: String) {
+        let alertController = UIAlertController(title: title, message: description , preferredStyle: .alert)
+        let action1 = UIAlertAction(title: "Ok", style: .default)
+        alertController.addAction(action1)
+        self.present(alertController, animated: true, completion: nil)
     }
 }
